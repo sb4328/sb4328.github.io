@@ -1,0 +1,21 @@
+---
+title: "The 411 on: Sanjana Batabyal"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+# Greetings, earthlings.
+
+![](images/bk_rooftop.jpg)
+
+I am 24 years old, I live in NYC, and I attend Columbia University for my MPH degree. I love snacks, podcasts, and dogs.
+
+![](https://media.giphy.com/media/26FKTvnlmIYehLGDe/giphy.gif)
+
+# About Me
+
+[About Me](about.html)
+
+Please stay a while and learn more about me!
+
