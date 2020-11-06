@@ -1,0 +1,63 @@
+---
+title: "Plotly Flex Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(magrittr)
+```
+
+```{r}
+data("ny_noaa")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### boxplot
+
+```{r}
+ny_noaa %>% 
+  slice_sample(n=1000) %>%
+  separate(date, into = c("year", "month", "day"), convert = TRUE) %>%
+  mutate(tmax = as.numeric(tmax)/10,tmin = as.numeric(tmin)/10) %>%
+  plot_ly(y = ~tmax, x = ~month, 
+          color = ~tmax, type="box", 
+          colors="viridis")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Bar Chart
+
+```{r}
+ny_noaa %>% 
+  slice_sample(n=1000) %>%
+  separate(date, into = c("year", "month", "day"), convert = TRUE) %>%
+  mutate(tmax = as.numeric(tmax)/10,tmin = as.numeric(tmin)/10) %>%
+  plot_ly(y = ~snwd, x = ~year, 
+          color = ~snwd, type="bar", 
+          colors="viridis")
+```
+
+### Scatterplot
+
+```{r}
+ny_noaa %>% 
+  slice_sample(n=1000) %>%
+  separate(date, into = c("year", "month", "day"), convert = TRUE) %>%
+  mutate(tmax = as.numeric(tmax)/10,tmin = as.numeric(tmin)/10) %>%
+  plot_ly(y = ~tmax, x = ~tmin, 
+          color = ~year, type="scatter", 
+          colors="viridis")
+```
+
