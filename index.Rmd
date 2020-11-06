@@ -19,3 +19,6 @@ I am 24 years old, I live in NYC, and I attend Columbia University for my MPH de
 
 Please stay a while and learn more about me!
 
+# Problem 2
+[Flex Dashboard](dashboard.html)
+
